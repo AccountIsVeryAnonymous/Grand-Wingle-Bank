@@ -31,11 +31,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonLogOut = new System.Windows.Forms.Button();
-            this.listBoxTransactions = new System.Windows.Forms.ListBox();
-            this.labelTransactions = new System.Windows.Forms.Label();
+            this.buttonCreateAccount = new System.Windows.Forms.Button();
+            this.labelError = new System.Windows.Forms.Label();
+            this.labelPlace = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
+            this.textBoxPlace = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxDate = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +47,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -51,66 +56,109 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(883, 537);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel1.Controls.Add(this.buttonLogOut);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(877, 101);
+            this.panel1.Size = new System.Drawing.Size(794, 84);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.labelTransactions);
-            this.panel2.Controls.Add(this.listBoxTransactions);
+            this.panel2.Controls.Add(this.buttonCreateAccount);
+            this.panel2.Controls.Add(this.labelError);
+            this.panel2.Controls.Add(this.labelPlace);
+            this.panel2.Controls.Add(this.labelName);
+            this.panel2.Controls.Add(this.labelDate);
+            this.panel2.Controls.Add(this.textBoxPlace);
+            this.panel2.Controls.Add(this.textBoxName);
+            this.panel2.Controls.Add(this.textBoxDate);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 110);
+            this.panel2.Location = new System.Drawing.Point(3, 93);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(877, 424);
+            this.panel2.Size = new System.Drawing.Size(794, 354);
             this.panel2.TabIndex = 1;
             // 
-            // buttonLogOut
+            // buttonCreateAccount
             // 
-            this.buttonLogOut.Location = new System.Drawing.Point(755, 33);
-            this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(88, 35);
-            this.buttonLogOut.TabIndex = 0;
-            this.buttonLogOut.Text = "Log out";
-            this.buttonLogOut.UseVisualStyleBackColor = true;
+            this.buttonCreateAccount.Location = new System.Drawing.Point(525, 242);
+            this.buttonCreateAccount.Name = "buttonCreateAccount";
+            this.buttonCreateAccount.Size = new System.Drawing.Size(121, 51);
+            this.buttonCreateAccount.TabIndex = 7;
+            this.buttonCreateAccount.Text = "Create Account";
+            this.buttonCreateAccount.UseVisualStyleBackColor = true;
+            this.buttonCreateAccount.Click += new System.EventHandler(this.buttonCreateAccount_Click);
             // 
-            // listBoxTransactions
+            // labelError
             // 
-            this.listBoxTransactions.FormattingEnabled = true;
-            this.listBoxTransactions.ItemHeight = 20;
-            this.listBoxTransactions.Location = new System.Drawing.Point(-3, 63);
-            this.listBoxTransactions.Name = "listBoxTransactions";
-            this.listBoxTransactions.Size = new System.Drawing.Size(880, 364);
-            this.listBoxTransactions.TabIndex = 0;
+            this.labelError.AutoSize = true;
+            this.labelError.Location = new System.Drawing.Point(43, 257);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(0, 20);
+            this.labelError.TabIndex = 6;
             // 
-            // labelTransactions
+            // labelPlace
             // 
-            this.labelTransactions.AutoSize = true;
-            this.labelTransactions.Location = new System.Drawing.Point(40, 21);
-            this.labelTransactions.Name = "labelTransactions";
-            this.labelTransactions.Size = new System.Drawing.Size(100, 20);
-            this.labelTransactions.TabIndex = 1;
-            this.labelTransactions.Text = "Transactions";
+            this.labelPlace.AutoSize = true;
+            this.labelPlace.Location = new System.Drawing.Point(43, 172);
+            this.labelPlace.Name = "labelPlace";
+            this.labelPlace.Size = new System.Drawing.Size(183, 20);
+            this.labelPlace.TabIndex = 5;
+            this.labelPlace.Text = "Enter an important place";
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(43, 96);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(185, 20);
+            this.labelName.TabIndex = 4;
+            this.labelName.Text = "Enter an important name";
+            // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Location = new System.Drawing.Point(43, 20);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(177, 20);
+            this.labelDate.TabIndex = 3;
+            this.labelDate.Text = "Enter an important date";
+            // 
+            // textBoxPlace
+            // 
+            this.textBoxPlace.Location = new System.Drawing.Point(379, 172);
+            this.textBoxPlace.Name = "textBoxPlace";
+            this.textBoxPlace.Size = new System.Drawing.Size(324, 26);
+            this.textBoxPlace.TabIndex = 2;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(379, 96);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(324, 26);
+            this.textBoxName.TabIndex = 1;
+            // 
+            // textBoxDate
+            // 
+            this.textBoxDate.Location = new System.Drawing.Point(379, 20);
+            this.textBoxDate.Name = "textBoxDate";
+            this.textBoxDate.Size = new System.Drawing.Size(324, 26);
+            this.textBoxDate.TabIndex = 0;
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 537);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form5";
             this.Text = "Form5";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -122,8 +170,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonLogOut;
-        private System.Windows.Forms.Label labelTransactions;
-        private System.Windows.Forms.ListBox listBoxTransactions;
+        private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.TextBox textBoxPlace;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxDate;
+        private System.Windows.Forms.Button buttonCreateAccount;
+        private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.Label labelPlace;
+        private System.Windows.Forms.Label labelName;
     }
 }

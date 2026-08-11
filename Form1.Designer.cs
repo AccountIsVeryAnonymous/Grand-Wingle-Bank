@@ -90,7 +90,7 @@
             this.buttonSignup.Location = new System.Drawing.Point(735, 52);
             this.buttonSignup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSignup.Name = "buttonSignup";
-            this.buttonSignup.Size = new System.Drawing.Size(112, 31);
+            this.buttonSignup.Size = new System.Drawing.Size(112, 37);
             this.buttonSignup.TabIndex = 0;
             this.buttonSignup.Text = "Sign up";
             this.buttonSignup.UseVisualStyleBackColor = false;
@@ -158,7 +158,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(645, 164);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(84, 29);
+            this.buttonLogin.Size = new System.Drawing.Size(84, 54);
             this.buttonLogin.TabIndex = 0;
             this.buttonLogin.Text = "Log in";
             this.buttonLogin.UseVisualStyleBackColor = true;

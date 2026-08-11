@@ -11,7 +11,7 @@ namespace Grand_Wingle_Bank
 {
     internal class allTransactions
     {
-        public List<Transaction> Transactions { get; set; }
+        public List<Transaction> Transactions { get; set; } = new List<Transaction>();
         public allTransactions()
         {
             SqlConnection connection = new SqlConnection(Database.connection);
@@ -31,12 +31,12 @@ namespace Grand_Wingle_Bank
     }
     internal class allAccounts
     {
-        public List<Account> Accounts { get; set; }
+        public List<Account> Accounts { get; set; } = new List<Account>();
         public allAccounts()
         {
             SqlConnection connection = new SqlConnection(Database.connection);
             string accountsSql = "select * from [dbo].[account]";
-            connection.Open();
+            connection.Open();      
             SqlDataAdapter adaptor = new SqlDataAdapter(accountsSql, connection);
             DataTable bankAccounts = new DataTable();
             adaptor.Fill(bankAccounts);
@@ -51,7 +51,7 @@ namespace Grand_Wingle_Bank
     }
     internal class allSavers
     {
-        public List<Saver> Savers { get; set; }
+        public List<Saver> Savers { get; set; } = new List<Saver>();
         public allSavers()
         {
             SqlConnection connection = new SqlConnection(Database.connection);
@@ -71,7 +71,7 @@ namespace Grand_Wingle_Bank
     }
     internal class allUsers
     {
-        public List<User> Users { get; set; }
+        public List<User> Users { get; set; } = new List<User>();
         public allUsers()
         {
             SqlConnection connection = new SqlConnection(Database.connection);

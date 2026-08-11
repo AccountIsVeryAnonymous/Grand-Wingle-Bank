@@ -30,5 +30,14 @@ namespace Grand_Wingle_Bank
             UserForename = row["UserForename"].ToString();
             UserSurname = row["UserSurname"].ToString();
         }
+        public User (string UserForename, string UserSurname, DateTime DOB, DateTime Date, string Place, string Name)
+        {
+            this.UserForename = UserForename;
+            this.UserSurname = UserSurname;
+            this.DOB = DOB;
+            this.Date = Date;
+            this.Place = Place;
+            this.Name = Name;
+        }
     }
 }
