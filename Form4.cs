@@ -12,14 +12,26 @@ namespace Grand_Wingle_Bank
 {
     public partial class Form4 : Form
     {
-        public Form4()
+        int ID = 0;
+        public Form4(int UserID)
         {
             InitializeComponent();
+            pictureBoxLogo.Image = Image.FromFile(@"C:\Users\Harve\OneDrive\Pictures\Screenshots 1\GrandWingleBankLogo.png");
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            ID = UserID;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void buttonLogOut_Click(object sender, EventArgs e)
         {
-
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Close();
+        }
+        private void buttonViewWingleAccount_Click(object sender, EventArgs e)
+        {
+            Form7 form7 = new Form7(ID);
+            form7.Show();
+            this.Close();
         }
     }
 }

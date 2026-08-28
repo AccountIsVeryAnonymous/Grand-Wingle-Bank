@@ -30,13 +30,17 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonSaver = new System.Windows.Forms.Button();
-            this.buttonCurrentAccount = new System.Windows.Forms.Button();
+            this.textBoxWingleSaver = new System.Windows.Forms.TextBox();
+            this.textBoxWingleAccount = new System.Windows.Forms.TextBox();
+            this.buttonViewWingleSaver = new System.Windows.Forms.Button();
+            this.buttonViewWingleAccount = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -59,45 +63,58 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel1.Controls.Add(this.buttonSaver);
-            this.panel1.Controls.Add(this.buttonCurrentAccount);
+            this.panel1.Controls.Add(this.textBoxWingleSaver);
+            this.panel1.Controls.Add(this.textBoxWingleAccount);
+            this.panel1.Controls.Add(this.buttonViewWingleSaver);
+            this.panel1.Controls.Add(this.buttonViewWingleAccount);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 116);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(894, 442);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // buttonSaver
+            // textBoxWingleSaver
             // 
-            this.buttonSaver.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonSaver.Location = new System.Drawing.Point(78, 188);
-            this.buttonSaver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonSaver.Name = "buttonSaver";
-            this.buttonSaver.Size = new System.Drawing.Size(307, 78);
-            this.buttonSaver.TabIndex = 1;
-            this.buttonSaver.Text = "WingleSaver\r\n                                                             Balance" +
-    ":\r\nAccount number:";
-            this.buttonSaver.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonSaver.UseVisualStyleBackColor = false;
+            this.textBoxWingleSaver.Location = new System.Drawing.Point(64, 198);
+            this.textBoxWingleSaver.Multiline = true;
+            this.textBoxWingleSaver.Name = "textBoxWingleSaver";
+            this.textBoxWingleSaver.Size = new System.Drawing.Size(482, 68);
+            this.textBoxWingleSaver.TabIndex = 5;
+            this.textBoxWingleSaver.Text = "WingleSaver";
             // 
-            // buttonCurrentAccount
+            // textBoxWingleAccount
             // 
-            this.buttonCurrentAccount.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonCurrentAccount.Location = new System.Drawing.Point(78, 60);
-            this.buttonCurrentAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonCurrentAccount.Name = "buttonCurrentAccount";
-            this.buttonCurrentAccount.Size = new System.Drawing.Size(307, 71);
-            this.buttonCurrentAccount.TabIndex = 0;
-            this.buttonCurrentAccount.Text = "WingleAccount\r\n                                                              Bala" +
-    "nce:\r\nAccount number: \r\n";
-            this.buttonCurrentAccount.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonCurrentAccount.UseVisualStyleBackColor = false;
+            this.textBoxWingleAccount.Location = new System.Drawing.Point(64, 57);
+            this.textBoxWingleAccount.Multiline = true;
+            this.textBoxWingleAccount.Name = "textBoxWingleAccount";
+            this.textBoxWingleAccount.Size = new System.Drawing.Size(482, 68);
+            this.textBoxWingleAccount.TabIndex = 4;
+            this.textBoxWingleAccount.Text = "WingleAccount";
+            // 
+            // buttonViewWingleSaver
+            // 
+            this.buttonViewWingleSaver.Location = new System.Drawing.Point(604, 198);
+            this.buttonViewWingleSaver.Name = "buttonViewWingleSaver";
+            this.buttonViewWingleSaver.Size = new System.Drawing.Size(122, 37);
+            this.buttonViewWingleSaver.TabIndex = 1;
+            this.buttonViewWingleSaver.Text = "View";
+            this.buttonViewWingleSaver.UseVisualStyleBackColor = true;
+            // 
+            // buttonViewWingleAccount
+            // 
+            this.buttonViewWingleAccount.Location = new System.Drawing.Point(604, 52);
+            this.buttonViewWingleAccount.Name = "buttonViewWingleAccount";
+            this.buttonViewWingleAccount.Size = new System.Drawing.Size(122, 37);
+            this.buttonViewWingleAccount.TabIndex = 0;
+            this.buttonViewWingleAccount.Text = "View";
+            this.buttonViewWingleAccount.UseVisualStyleBackColor = true;
+            this.buttonViewWingleAccount.Click += new System.EventHandler(this.buttonViewWingleAccount_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel2.Controls.Add(this.pictureBoxLogo);
             this.panel2.Controls.Add(this.buttonLogOut);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 4);
@@ -105,6 +122,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(894, 104);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(436, 97);
+            this.pictureBoxLogo.TabIndex = 1;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // buttonLogOut
             // 
@@ -115,6 +140,7 @@
             this.buttonLogOut.TabIndex = 0;
             this.buttonLogOut.Text = "Log out";
             this.buttonLogOut.UseVisualStyleBackColor = true;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
             // Form4
             // 
@@ -127,7 +153,9 @@
             this.Text = "Form4";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,7 +166,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonLogOut;
-        private System.Windows.Forms.Button buttonCurrentAccount;
-        private System.Windows.Forms.Button buttonSaver;
+        private System.Windows.Forms.Button buttonViewWingleAccount;
+        private System.Windows.Forms.Button buttonViewWingleSaver;
+        private System.Windows.Forms.TextBox textBoxWingleSaver;
+        private System.Windows.Forms.TextBox textBoxWingleAccount;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }

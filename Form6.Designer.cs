@@ -32,14 +32,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.labelUserID = new System.Windows.Forms.Label();
-            this.textBoxUserID = new System.Windows.Forms.TextBox();
-            this.textBoxPasscode = new System.Windows.Forms.TextBox();
-            this.labelPasscode = new System.Windows.Forms.Label();
             this.buttonContinue = new System.Windows.Forms.Button();
+            this.labelPasscode = new System.Windows.Forms.Label();
+            this.textBoxPasscode = new System.Windows.Forms.TextBox();
+            this.textBoxUserID = new System.Windows.Forms.TextBox();
+            this.labelUserID = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -55,25 +59,27 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(898, 551);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.buttonCancel);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 84);
+            this.panel1.Size = new System.Drawing.Size(892, 104);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 93);
+            this.panel2.Location = new System.Drawing.Point(3, 113);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(794, 354);
+            this.panel2.Size = new System.Drawing.Size(892, 435);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -86,40 +92,8 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(794, 354);
+            this.panel3.Size = new System.Drawing.Size(892, 435);
             this.panel3.TabIndex = 0;
-            // 
-            // labelUserID
-            // 
-            this.labelUserID.AutoSize = true;
-            this.labelUserID.Location = new System.Drawing.Point(55, 50);
-            this.labelUserID.Name = "labelUserID";
-            this.labelUserID.Size = new System.Drawing.Size(187, 20);
-            this.labelUserID.TabIndex = 0;
-            this.labelUserID.Text = "Your user ID is as follows";
-            // 
-            // textBoxUserID
-            // 
-            this.textBoxUserID.Location = new System.Drawing.Point(353, 50);
-            this.textBoxUserID.Name = "textBoxUserID";
-            this.textBoxUserID.Size = new System.Drawing.Size(315, 26);
-            this.textBoxUserID.TabIndex = 1;
-            // 
-            // textBoxPasscode
-            // 
-            this.textBoxPasscode.Location = new System.Drawing.Point(353, 169);
-            this.textBoxPasscode.Name = "textBoxPasscode";
-            this.textBoxPasscode.Size = new System.Drawing.Size(315, 26);
-            this.textBoxPasscode.TabIndex = 2;
-            // 
-            // labelPasscode
-            // 
-            this.labelPasscode.AutoSize = true;
-            this.labelPasscode.Location = new System.Drawing.Point(59, 169);
-            this.labelPasscode.Name = "labelPasscode";
-            this.labelPasscode.Size = new System.Drawing.Size(204, 20);
-            this.labelPasscode.TabIndex = 3;
-            this.labelPasscode.Text = "Your passcode is as follows";
             // 
             // buttonContinue
             // 
@@ -131,18 +105,70 @@
             this.buttonContinue.UseVisualStyleBackColor = true;
             this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
             // 
+            // labelPasscode
+            // 
+            this.labelPasscode.AutoSize = true;
+            this.labelPasscode.Location = new System.Drawing.Point(59, 169);
+            this.labelPasscode.Name = "labelPasscode";
+            this.labelPasscode.Size = new System.Drawing.Size(204, 20);
+            this.labelPasscode.TabIndex = 3;
+            this.labelPasscode.Text = "Your passcode is as follows";
+            // 
+            // textBoxPasscode
+            // 
+            this.textBoxPasscode.Location = new System.Drawing.Point(353, 169);
+            this.textBoxPasscode.Name = "textBoxPasscode";
+            this.textBoxPasscode.Size = new System.Drawing.Size(315, 26);
+            this.textBoxPasscode.TabIndex = 2;
+            // 
+            // textBoxUserID
+            // 
+            this.textBoxUserID.Location = new System.Drawing.Point(353, 50);
+            this.textBoxUserID.Name = "textBoxUserID";
+            this.textBoxUserID.Size = new System.Drawing.Size(315, 26);
+            this.textBoxUserID.TabIndex = 1;
+            // 
+            // labelUserID
+            // 
+            this.labelUserID.AutoSize = true;
+            this.labelUserID.Location = new System.Drawing.Point(55, 50);
+            this.labelUserID.Name = "labelUserID";
+            this.labelUserID.Size = new System.Drawing.Size(187, 20);
+            this.labelUserID.TabIndex = 0;
+            this.labelUserID.Text = "Your user ID is as follows";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(4, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(449, 101);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(730, 33);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(90, 34);
+            this.buttonCancel.TabIndex = 1;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(898, 551);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form6";
             this.Text = "Form6";
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,5 +184,7 @@
         private System.Windows.Forms.Label labelPasscode;
         private System.Windows.Forms.TextBox textBoxPasscode;
         private System.Windows.Forms.Button buttonContinue;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

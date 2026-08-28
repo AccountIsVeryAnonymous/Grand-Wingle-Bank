@@ -13,7 +13,7 @@ namespace Grand_Wingle_Bank
 {
     public partial class Form1 : Form
     {
-        private int userID;
+        private int UserID;
         private byte[] hash;
         public Form1()
         {
@@ -22,6 +22,8 @@ namespace Grand_Wingle_Bank
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            pictureBoxLogo.Image = Image.FromFile(@"C:\Users\Harve\OneDrive\Pictures\Screenshots 1\GrandWingleBankLogo.png");
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             allTransactions transactions = new allTransactions();
             allAccounts accounts = new allAccounts();
             allSavers savers = new allSavers();
@@ -41,7 +43,7 @@ namespace Grand_Wingle_Bank
             {
                 try
                 {
-                    userID = int.Parse(userIDString);
+                    UserID = int.Parse(userIDString);
                     if (userIDString.Length == 0 || textBoxPasscode.Text.Length == 0)
                     {
                         labelError.Text = "Enter a valid user ID and passcode";
@@ -65,17 +67,19 @@ namespace Grand_Wingle_Bank
             }
             foreach (User u in new allUsers().Users)
             {
-                if (u.UserID == userID)
+                if (u.UserID == UserID)
                 {
                     if (u.Hash == hash)
                     {
-                        Form4 form4 = new Form4();
+                        Form4 form4 = new Form4(UserID);
                         form4.Show();
                         this.Hide();
                     }
                     else
                     {
-                        labelError.Text = "Incorrect passcode";
+                        Form3 form3 = new Form3(UserID);
+                        form3.Show();
+                        this.Hide();
                     }
                     break;
                 }

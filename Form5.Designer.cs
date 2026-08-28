@@ -39,8 +39,11 @@
             this.textBoxPlace = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxDate = new System.Windows.Forms.TextBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -56,16 +59,17 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 548);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.pictureBoxLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 84);
+            this.panel1.Size = new System.Drawing.Size(895, 103);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -79,9 +83,9 @@
             this.panel2.Controls.Add(this.textBoxName);
             this.panel2.Controls.Add(this.textBoxDate);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 93);
+            this.panel2.Location = new System.Drawing.Point(3, 112);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(794, 354);
+            this.panel2.Size = new System.Drawing.Size(895, 433);
             this.panel2.TabIndex = 1;
             // 
             // buttonCreateAccount
@@ -150,17 +154,27 @@
             this.textBoxDate.Size = new System.Drawing.Size(324, 26);
             this.textBoxDate.TabIndex = 0;
             // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(447, 96);
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(901, 548);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form5";
             this.Text = "Form5";
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +192,6 @@
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Label labelPlace;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }
