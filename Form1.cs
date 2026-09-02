@@ -46,7 +46,7 @@ namespace Grand_Wingle_Bank
                     UserID = int.Parse(userIDString);
                     if (userIDString.Length == 0 || textBoxPasscode.Text.Length == 0)
                     {
-                        labelError.Text = "Enter a valid user ID and passcode";
+                        MessageBox.Show("Enter a valid user ID and passcode");
                     }
                     else
                     {
@@ -57,7 +57,7 @@ namespace Grand_Wingle_Bank
                 {
                     textBoxUserID.Clear();
                     textBoxPasscode.Clear();
-                    labelError.Text = "Enter a valid user ID and passcode";
+                    MessageBox.Show("Enter a valid user ID and passcode");
                 }
             }
             using (SHA256 sha256 = SHA256.Create())
@@ -85,7 +85,7 @@ namespace Grand_Wingle_Bank
                 }
                 else
                 {
-                    labelError.Text = "Account not found";
+                    MessageBox.Show("Account not found");
                 }
             }
         }

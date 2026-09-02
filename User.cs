@@ -9,7 +9,7 @@ namespace Grand_Wingle_Bank
 {
     internal class User
     {
-        public int UserID { get; set; }
+        public long UserID { get; set; }
         public DateTime DOB { get; set; }
         public byte[] Hash { get; set; }
         public DateTime Date { get; set; }
@@ -20,13 +20,23 @@ namespace Grand_Wingle_Bank
         public string UserSurname { get; set; }
         public User(DataRow row)
         {
-            UserID = int.Parse(row["UserID"].ToString());
+            UserID = Convert.ToInt64(row["UserID"].ToString());
             DOB = DateTime.Parse(row["DOB"].ToString());
             Hash = (byte[])row["Hash"];
             Date = DateTime.Parse(row["Date"].ToString());
             Place = row["Place"].ToString();
             Name = row["Name"].ToString();
-            LockedTime = DateTime.Parse(row["LockedTime"].ToString());
+            // Safely parse LockedTime: handle DBNull and invalid formats without throwing
+            LockedTime = null;
+            object lockedObj = row["LockedTime"];
+            if (lockedObj != DBNull.Value)
+            {
+                DateTime tmp;
+                if (DateTime.TryParse(lockedObj.ToString(), out tmp))
+                {                                    
+                    LockedTime = tmp;
+                }
+            }
             UserForename = row["UserForename"].ToString();
             UserSurname = row["UserSurname"].ToString();
         }

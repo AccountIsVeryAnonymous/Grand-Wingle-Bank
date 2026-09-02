@@ -34,7 +34,6 @@
             this.labelSignup = new System.Windows.Forms.Label();
             this.buttonSignup = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.labelError = new System.Windows.Forms.Label();
             this.textBoxPasscode = new System.Windows.Forms.TextBox();
             this.textBoxUserID = new System.Windows.Forms.TextBox();
             this.labelPasscode = new System.Windows.Forms.Label();
@@ -110,7 +109,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.labelError);
             this.panel2.Controls.Add(this.textBoxPasscode);
             this.panel2.Controls.Add(this.textBoxUserID);
             this.panel2.Controls.Add(this.labelPasscode);
@@ -122,14 +120,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(894, 442);
             this.panel2.TabIndex = 1;
-            // 
-            // labelError
-            // 
-            this.labelError.AutoSize = true;
-            this.labelError.Location = new System.Drawing.Point(137, 297);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(0, 20);
-            this.labelError.TabIndex = 5;
             // 
             // textBoxPasscode
             // 
@@ -208,7 +198,6 @@
         private System.Windows.Forms.TextBox textBoxUserID;
         private System.Windows.Forms.Label labelPasscode;
         private System.Windows.Forms.Label labelUserID;
-        private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }

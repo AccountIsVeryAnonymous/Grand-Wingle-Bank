@@ -30,16 +30,16 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.buttonMainMenu = new System.Windows.Forms.Button();
-            this.dataGridViewTransactions = new System.Windows.Forms.DataGridView();
-            this.labelAccountTransactions = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.buttonTransactionStart = new System.Windows.Forms.Button();
+            this.labelAccountTransactions = new System.Windows.Forms.Label();
+            this.dataGridViewTransactions = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +70,24 @@
             this.panel1.Size = new System.Drawing.Size(895, 105);
             this.panel1.TabIndex = 0;
             // 
+            // buttonMainMenu
+            // 
+            this.buttonMainMenu.Location = new System.Drawing.Point(694, 42);
+            this.buttonMainMenu.Name = "buttonMainMenu";
+            this.buttonMainMenu.Size = new System.Drawing.Size(115, 37);
+            this.buttonMainMenu.TabIndex = 1;
+            this.buttonMainMenu.Text = "Main menu";
+            this.buttonMainMenu.UseVisualStyleBackColor = true;
+            this.buttonMainMenu.Click += new System.EventHandler(this.buttonMainMenu_Click);
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(431, 102);
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.buttonTransactionStart);
@@ -81,33 +99,15 @@
             this.panel2.Size = new System.Drawing.Size(895, 439);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBoxLogo
+            // buttonTransactionStart
             // 
-            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(431, 102);
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
-            // 
-            // buttonMainMenu
-            // 
-            this.buttonMainMenu.Location = new System.Drawing.Point(694, 42);
-            this.buttonMainMenu.Name = "buttonMainMenu";
-            this.buttonMainMenu.Size = new System.Drawing.Size(115, 37);
-            this.buttonMainMenu.TabIndex = 1;
-            this.buttonMainMenu.Text = "Main menu";
-            this.buttonMainMenu.UseVisualStyleBackColor = true;
-            this.buttonMainMenu.Click += new System.EventHandler(this.buttonMainMenu_Click);
-            // 
-            // dataGridViewTransactions
-            // 
-            this.dataGridViewTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTransactions.Location = new System.Drawing.Point(3, 85);
-            this.dataGridViewTransactions.Name = "dataGridViewTransactions";
-            this.dataGridViewTransactions.RowHeadersWidth = 62;
-            this.dataGridViewTransactions.RowTemplate.Height = 28;
-            this.dataGridViewTransactions.Size = new System.Drawing.Size(889, 345);
-            this.dataGridViewTransactions.TabIndex = 0;
+            this.buttonTransactionStart.Location = new System.Drawing.Point(506, 17);
+            this.buttonTransactionStart.Name = "buttonTransactionStart";
+            this.buttonTransactionStart.Size = new System.Drawing.Size(256, 35);
+            this.buttonTransactionStart.TabIndex = 2;
+            this.buttonTransactionStart.Text = "Make a transaction";
+            this.buttonTransactionStart.UseVisualStyleBackColor = true;
+            this.buttonTransactionStart.Click += new System.EventHandler(this.buttonTransactionStart_Click);
             // 
             // labelAccountTransactions
             // 
@@ -118,14 +118,16 @@
             this.labelAccountTransactions.TabIndex = 1;
             this.labelAccountTransactions.Text = "WingleAccount transactions";
             // 
-            // buttonTransactionStart
+            // dataGridViewTransactions
             // 
-            this.buttonTransactionStart.Location = new System.Drawing.Point(506, 17);
-            this.buttonTransactionStart.Name = "buttonTransactionStart";
-            this.buttonTransactionStart.Size = new System.Drawing.Size(256, 35);
-            this.buttonTransactionStart.TabIndex = 2;
-            this.buttonTransactionStart.Text = "Make a transaction";
-            this.buttonTransactionStart.UseVisualStyleBackColor = true;
+            this.dataGridViewTransactions.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTransactions.Location = new System.Drawing.Point(3, 85);
+            this.dataGridViewTransactions.Name = "dataGridViewTransactions";
+            this.dataGridViewTransactions.RowHeadersWidth = 62;
+            this.dataGridViewTransactions.RowTemplate.Height = 28;
+            this.dataGridViewTransactions.Size = new System.Drawing.Size(889, 345);
+            this.dataGridViewTransactions.TabIndex = 0;
             // 
             // Form7
             // 
@@ -137,9 +139,9 @@
             this.Text = "Form7";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactions)).EndInit();
             this.ResumeLayout(false);
 

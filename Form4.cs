@@ -12,13 +12,27 @@ namespace Grand_Wingle_Bank
 {
     public partial class Form4 : Form
     {
-        int ID = 0;
-        public Form4(int UserID)
+        private long ID = 0;
+        private long AccountNumber = 0;
+        private double AccountBalance = 0;
+        private double SaverBalance = 0;
+
+        public Form4(long UserID)
         {
             InitializeComponent();
             pictureBoxLogo.Image = Image.FromFile(@"C:\Users\Harve\OneDrive\Pictures\Screenshots 1\GrandWingleBankLogo.png");
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             ID = UserID;
+            foreach(Account a in new allAccounts().Accounts)
+            {
+                if (a.UserID == ID)
+                {
+                    AccountNumber = a.AccountNumber;
+                    AccountBalance = double.Parse(a.CurrentAccountBalance.ToString());
+                    SaverBalance = double.Parse(a.SaverBalance.ToString());
+                    break;
+                }
+            }
         }
 
         private void buttonLogOut_Click(object sender, EventArgs e)
@@ -29,7 +43,7 @@ namespace Grand_Wingle_Bank
         }
         private void buttonViewWingleAccount_Click(object sender, EventArgs e)
         {
-            Form7 form7 = new Form7(ID);
+            Form7 form7 = new Form7(AccountNumber, ID);
             form7.Show();
             this.Close();
         }

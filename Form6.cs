@@ -42,7 +42,7 @@ namespace Grand_Wingle_Bank
             textBoxUserID.Text = UserID;
             for (int i = 1; i <= 6; i++)
             {
-                Passcode = Convert.ToString(RNG.Next(1, 10));
+                Passcode += Convert.ToString(RNG.Next(1, 10));
             }
             textBoxPasscode.Text = Passcode;
             using (SHA256 sha256 = SHA256.Create())
@@ -59,7 +59,7 @@ namespace Grand_Wingle_Bank
             string insertSql = "insert into [dbo].[User] (UserID, DOB, Hash, Date, Place, Name, UserForename, UserSurname) values (@UserID, @DOB, @Hash, @Date, @Place, @Name, @UserForename, @UserSurname)";
             using (SqlCommand command = new SqlCommand(insertSql, connection))
             {
-                command.Parameters.AddWithValue("@UserID", int.Parse(UserID));
+                command.Parameters.AddWithValue("@UserID", Convert.ToInt64(UserID));
                 command.Parameters.AddWithValue("@DOB", DOB);
                 command.Parameters.AddWithValue("@Hash", hash);
                 command.Parameters.AddWithValue("@Date", Date);
@@ -81,22 +81,31 @@ namespace Grand_Wingle_Bank
             {
                 SortCode = Convert.ToString(RNG.Next(1, 10));
             }
-            string accountSql = "insert into [dbo].[Account] (UserID, 0, 0, 0, 0, AccountNumber, SortCode) values (@UserID, @TotalBalance, @CurrentAccountBalance, @SaverBalance, @SaverNumber, @AccountNumber, @SortCode)";
+            string accountSql = "insert into [dbo].[Account] (UserID, TotalBalance, CurrentAccountBalance, SaverBalance, SaverNumber, AccountNumber, SortCode) values (@UserID, @TotalBalance, @CurrentAccountBalance, @SaverBalance, @SaverNumber, @AccountNumber, @SortCode)";
             using (SqlCommand command = new SqlCommand(accountSql, connection))
             {
-                command.Parameters.AddWithValue("@UserID", int.Parse(UserID));
+                decimal TotalBalance = 0;
+                decimal AccountBalance = 0;
+                decimal SaverBalance = 0;
+                long SaverNumber = 0;
+                command.Parameters.AddWithValue("@UserID", Convert.ToInt64(UserID));
                 command.Parameters.AddWithValue("@TotalBalance", 0);
                 command.Parameters.AddWithValue("@CurrentAccountBalance", 0);
                 command.Parameters.AddWithValue("@SaverBalance", 0);
                 command.Parameters.AddWithValue("@SaverNumber", 0);
-                command.Parameters.AddWithValue("@AccountNumber", int.Parse(AccountNumber));
+                command.Parameters.AddWithValue("@AccountNumber", Convert.ToInt64(AccountNumber));
                 command.Parameters.AddWithValue("@SortCode", int.Parse(SortCode));
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
             }
-            Form4 form4 = new Form4(int.Parse(UserID));
+            MessageBox.Show("Your account has been created");
+            Form4 form4 = new Form4(Convert.ToInt64(UserID));
             form4.Show();
+            MessageBox.Show("You have been assigned a standard WingleAccount. To view your account, press the view button");
+            MessageBox.Show("All transactions will be made inside the WingleAccount section");
+            MessageBox.Show("You can create a WingleSaver if you so wish. This can be done inside the WingleSaver section");
+            MessageBox.Show("When you have finished, press the log out button to secure your account.");
             this.Close();
         }
         private void buttonCancel_Click(object sender, EventArgs e)
