@@ -23,8 +23,6 @@ namespace Grand_Wingle_Bank
         public Form5(string Forename, string Surname, DateTime DateOfBirth)
         {
             InitializeComponent();
-            pictureBoxLogo.Image = Image.FromFile(@"C:\Users\Harve\OneDrive\Pictures\Screenshots 1\GrandWingleBankLogo.png");
-            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             this.UserFname = Forename;
             this.UserSname = Surname;
             this.DOB = DateOfBirth;

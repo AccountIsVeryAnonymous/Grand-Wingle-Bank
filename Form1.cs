@@ -22,8 +22,6 @@ namespace Grand_Wingle_Bank
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pictureBoxLogo.Image = Image.FromFile(@"C:\Users\Harve\OneDrive\Pictures\Screenshots 1\GrandWingleBankLogo.png");
-            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             allTransactions transactions = new allTransactions();
             allAccounts accounts = new allAccounts();
             allSavers savers = new allSavers();
@@ -69,7 +67,7 @@ namespace Grand_Wingle_Bank
             {
                 if (u.UserID == UserID)
                 {
-                    if (u.Hash == hash)
+                    if (u.Hash.SequenceEqual(hash))
                     {
                         Form4 form4 = new Form4(UserID);
                         form4.Show();

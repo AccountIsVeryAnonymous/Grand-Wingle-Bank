@@ -91,6 +91,6 @@ namespace Grand_Wingle_Bank
     }
     class Database
     {
-        public static string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Harve\OneDrive\Documents\Grand Wingle Bank\Bank.mdf"";Integrated Security=True";
+        public static string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Bank.mdf;Integrated Security=True";
     }
 }

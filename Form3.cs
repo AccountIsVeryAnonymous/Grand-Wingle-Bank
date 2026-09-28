@@ -23,8 +23,6 @@ namespace Grand_Wingle_Bank
         {
             InitializeComponent();
             ID = Convert.ToString(userID);
-            pictureBoxLogo.Image = Image.FromFile(@"C:\Users\Harve\OneDrive\Pictures\Screenshots 1\GrandWingleBankLogo.png");
-            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             textBoxErrorMessage.Text = "Incorrect passcode. You will now be asked a security question.";
             foreach (User user in users)
             {

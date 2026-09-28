@@ -27,8 +27,6 @@ namespace Grand_Wingle_Bank
         public Form6(string UserForename, string UserSurname, DateTime DateOfBirth, DateTime ImportantDate, string ImportantName, string ImportantPlace)
         {
             InitializeComponent();
-            pictureBox1.Image = Image.FromFile(@"C:\Users\Harve\OneDrive\Pictures\Screenshots 1\GrandWingleBankLogo.png");
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             DOB = DateOfBirth;
             Date = ImportantDate;
             this.ImportantName = ImportantName;

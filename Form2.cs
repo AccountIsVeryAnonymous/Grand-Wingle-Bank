@@ -18,8 +18,7 @@ namespace Grand_Wingle_Bank
         public Form2()
         {
             InitializeComponent();
-            pictureBoxLogo.Image = Image.FromFile(@"C:\Users\Harve\OneDrive\Pictures\Screenshots 1\GrandWingleBankLogo.png");
-            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+
         }
 
         private void buttonContinue_Click(object sender, EventArgs e)

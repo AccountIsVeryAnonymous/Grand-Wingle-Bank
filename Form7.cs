@@ -17,8 +17,6 @@ namespace Grand_Wingle_Bank
         public Form7(long AccountNumber, long UserID)
         {
             InitializeComponent();
-            pictureBoxLogo.Image = Image.FromFile(@"C:\Users\Harve\OneDrive\Pictures\Screenshots 1\GrandWingleBankLogo.png");
-            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             Number = AccountNumber;
             ID = UserID;
             dataGridViewTransactions.Columns.Add("Date", "Date of transaction");
