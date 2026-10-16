@@ -37,26 +37,13 @@ namespace Grand_Wingle_Bank
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string userIDString = textBoxUserID.Text;
-            while (true)
+            UserID = int.Parse(userIDString);
+            if (userIDString.Length == 0 || textBoxPasscode.Text.Length == 0)
             {
-                try
-                {
-                    UserID = int.Parse(userIDString);
-                    if (userIDString.Length == 0 || textBoxPasscode.Text.Length == 0)
-                    {
-                        MessageBox.Show("Enter a valid user ID and passcode");
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                catch
-                {
-                    textBoxUserID.Clear();
-                    textBoxPasscode.Clear();
-                    MessageBox.Show("Enter a valid user ID and passcode");
-                }
+                MessageBox.Show("Enter a valid user ID and passcode");
+                textBoxUserID.Clear();
+                textBoxPasscode.Clear();
+                return;
             }
             using (SHA256 sha256 = SHA256.Create())
             {

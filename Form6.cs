@@ -73,11 +73,11 @@ namespace Grand_Wingle_Bank
             string SortCode = "";
             for (int i = 0; i < 12; i++)
             {
-                AccountNumber = Convert.ToString(RNG.Next(1, 10));
+                AccountNumber += Convert.ToString(RNG.Next(1, 10));
             }
             for (int i = 0; i < 6; i++)
             {
-                SortCode = Convert.ToString(RNG.Next(1, 10));
+                SortCode += Convert.ToString(RNG.Next(1, 10));
             }
             string accountSql = "insert into [dbo].[Account] (UserID, TotalBalance, CurrentAccountBalance, SaverBalance, SaverNumber, AccountNumber, SortCode) values (@UserID, @TotalBalance, @CurrentAccountBalance, @SaverBalance, @SaverNumber, @AccountNumber, @SortCode)";
             using (SqlCommand command = new SqlCommand(accountSql, connection))

@@ -9,20 +9,20 @@ namespace Grand_Wingle_Bank
 {
     internal class Account
     {
-        public int UserID { get; set; }
+        public long UserID { get; set; }
         public decimal TotalBalance { get; set; }
         public decimal CurrentAccountBalance { get; set; }
         public decimal? SaverBalance { get; set; }
-        public int? SaverNumber { get; set; }
-        public int AccountNumber { get; set; }
+        public long? SaverNumber { get; set; }
+        public long AccountNumber { get; set; }
         public Account(DataRow row)
         {
-            UserID = int.Parse(row["UserID"].ToString());
+            UserID = Convert.ToInt64(row["UserID"].ToString());
             TotalBalance = decimal.Parse(row["TotalBalance"].ToString());
             CurrentAccountBalance = decimal.Parse(row["CurrentAccountBalance"].ToString());
             SaverBalance = decimal.Parse(row["SaverBalance"].ToString());
-            SaverNumber = int.Parse(row["SaverNumber"].ToString()); 
-            AccountNumber = int.Parse(row["AccountNumber"].ToString());
+            SaverNumber = Convert.ToInt64(row["SaverNumber"].ToString()); 
+            AccountNumber = Convert.ToInt64(row["AccountNumber"].ToString());
         }
     }
 }

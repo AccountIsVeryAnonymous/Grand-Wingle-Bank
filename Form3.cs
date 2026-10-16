@@ -29,6 +29,7 @@ namespace Grand_Wingle_Bank
                 if (user.UserID == userID)
                 {
                     int questionChoice = RNG.Next(1, 4);
+                    MessageBox.Show(questionChoice.ToString());
                     if (questionChoice == 1)
                     {
                         answer = Convert.ToString(user.Date);
@@ -48,8 +49,9 @@ namespace Grand_Wingle_Bank
                         break;
                     }
                 }
-                textBoxQuestion.AppendText(question);
+
             }
+            textBoxQuestion.Text = "Please enter your important" + question;
         }
         private void buttonContinue_Click(object sender, EventArgs e)
         {
@@ -60,22 +62,21 @@ namespace Grand_Wingle_Bank
                     Form4 form4 = new Form4(user.UserID);
                     form4.Show();
                     this.Hide();
-
+                    return;
                 }
-                else
-                {
-                    textBoxLocked.Text = "Account locked. Please contact customer services";
-                    SqlConnection connection = new SqlConnection(Database.connection);
-                    connection.Open();
-                    string updateSql = "update [dbo].[User] set LockedTime = @LockedTime where UserID = @UserID";
-                    using (SqlCommand command = new SqlCommand(updateSql, connection))
-                    {
-                        command.Parameters.AddWithValue("@LockedTime", DateTime.Now);
-                        command.Parameters.AddWithValue("@UserID", ID);
-                        command.ExecuteNonQuery();
-                        connection.Close();
-                    }
-                }
+            }
+            textBoxErrorMessage.Text = "Account locked. Please contact customer services";
+            SqlConnection connection = new SqlConnection(Database.connection);
+            connection.Open();
+            MessageBox.Show(connection.Database);
+            string updateSql = "update [dbo].[User] set LockedTime = @LockedTime where UserID = @UserID";
+            using (SqlCommand command = new SqlCommand(updateSql, connection))
+            {
+                command.Parameters.AddWithValue("@LockedTime", DateTime.Now);
+                command.Parameters.AddWithValue("@UserID", ID);
+                int rowsAffected = command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show(rowsAffected.ToString());
             }
         }
         private void buttonSignup_Click(object sender, EventArgs e)
