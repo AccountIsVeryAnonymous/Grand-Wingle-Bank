@@ -29,7 +29,7 @@ namespace Grand_Wingle_Bank
                 if (user.UserID == userID)
                 {
                     int questionChoice = RNG.Next(1, 4);
-                    MessageBox.Show(questionChoice.ToString());
+                    MessageBox.Show(Convert.ToString(questionChoice));
                     if (questionChoice == 1)
                     {
                         answer = Convert.ToString(user.Date);
@@ -76,7 +76,7 @@ namespace Grand_Wingle_Bank
                 command.Parameters.AddWithValue("@UserID", ID);
                 int rowsAffected = command.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show(rowsAffected.ToString());
+                MessageBox.Show(Convert.ToString(rowsAffected));
             }
         }
         private void buttonSignup_Click(object sender, EventArgs e)

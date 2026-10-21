@@ -23,9 +23,9 @@ namespace Grand_Wingle_Bank
         public Form5(string Forename, string Surname, DateTime DateOfBirth)
         {
             InitializeComponent();
-            this.UserFname = Forename;
-            this.UserSname = Surname;
-            this.DOB = DateOfBirth;
+            UserFname = Forename;
+            UserSname = Surname;
+            DOB = DateOfBirth;
         }
 
         private void buttonCreateAccount_Click(object sender, EventArgs e)

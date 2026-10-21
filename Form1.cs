@@ -22,10 +22,7 @@ namespace Grand_Wingle_Bank
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            allTransactions transactions = new allTransactions();
-            allAccounts accounts = new allAccounts();
-            allSavers savers = new allSavers();
-            allUsers users = new allUsers();
+
         }
         private void buttonSignup_Click(object sender, EventArgs e)
         {
@@ -52,13 +49,17 @@ namespace Grand_Wingle_Bank
             }
             foreach (User u in new allUsers().Users)
             {
-                if (u.UserID == UserID)
+                if (u.UserID == UserID && u.LockedTime == null)
                 {
                     if (u.Hash.SequenceEqual(hash))
                     {
                         Form4 form4 = new Form4(UserID);
                         form4.Show();
                         this.Hide();
+                    }
+                    else if (u.LockedTime != null)
+                    {
+                        MessageBox.Show("Account locked. Please contact customer services");
                     }
                     else
                     {

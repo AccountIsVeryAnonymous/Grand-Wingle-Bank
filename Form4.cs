@@ -26,13 +26,12 @@ namespace Grand_Wingle_Bank
                 if (a.UserID == ID)
                 {
                     AccountNumber = a.AccountNumber;
-                    AccountBalance = double.Parse(a.CurrentAccountBalance.ToString());
-                    SaverBalance = double.Parse(a.SaverBalance.ToString());
+                    AccountBalance = double.Parse(Convert.ToString(a.CurrentAccountBalance));
+                    SaverBalance = double.Parse(Convert.ToString(a.SaverBalance));
                     break;
                 }
             }
         }
-
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
