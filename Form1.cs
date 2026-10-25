@@ -13,7 +13,7 @@ namespace Grand_Wingle_Bank
 {
     public partial class Form1 : Form
     {
-        private int UserID;
+        private long UserID;
         private byte[] hash;
         public Form1()
         {
@@ -34,7 +34,7 @@ namespace Grand_Wingle_Bank
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string userIDString = textBoxUserID.Text;
-            UserID = int.Parse(userIDString);
+            UserID = Convert.ToInt64(userIDString);
             if (userIDString.Length == 0 || textBoxPasscode.Text.Length == 0)
             {
                 MessageBox.Show("Enter a valid user ID and passcode");
@@ -47,6 +47,7 @@ namespace Grand_Wingle_Bank
                 byte[] inputByte = Encoding.UTF8.GetBytes(textBoxPasscode.Text);
                 hash = sha256.ComputeHash(inputByte);
             }
+            bool found = false;
             foreach (User u in new allUsers().Users)
             {
                 if (u.UserID == UserID && u.LockedTime == null)
@@ -56,23 +57,28 @@ namespace Grand_Wingle_Bank
                         Form4 form4 = new Form4(UserID);
                         form4.Show();
                         this.Hide();
-                    }
-                    else if (u.LockedTime != null)
-                    {
-                        MessageBox.Show("Account locked. Please contact customer services");
+                        found = true;
+                        return;
                     }
                     else
                     {
                         Form3 form3 = new Form3(UserID);
                         form3.Show();
                         this.Hide();
+                        found = true;
+                        return;
                     }
+                }
+                else if (u.UserID == UserID && u.LockedTime != null)
+                {
+                    MessageBox.Show("Account locked. Please contact customer services");
+                    found = true;
                     break;
                 }
-                else
-                {
-                    MessageBox.Show("Account not found");
-                }
+            }
+            if (!found)
+            {
+                MessageBox.Show("Account not found");
             }
         }
     }

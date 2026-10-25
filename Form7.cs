@@ -33,7 +33,6 @@ namespace Grand_Wingle_Bank
                     if (t.AccountNumber == Number)
                     {
                         dataGridViewTransactions.Rows.Add(t.DateOfTransaction, t.Amount, t.AccountNumber, t.ReceivingNumber, t.BalanceBefore, t.BalanceAfter);
-
                     }
                     if (t.ReceivingNumber == Number)
                     {
@@ -56,7 +55,16 @@ namespace Grand_Wingle_Bank
 
         private void buttonTransactionStart_Click(object sender, EventArgs e)
         {
+            Form8 form8 = new Form8(Number, ID);
+            form8.Show();
+            this.Close();
+        }
 
+        private void buttonMoveMoney_Click(object sender, EventArgs e)
+        {
+            Form9 form9 = new Form9(Number, ID);
+            form9.Show();
+            this.Close();
         }
     }
 }

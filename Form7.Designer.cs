@@ -33,9 +33,11 @@
             this.buttonMainMenu = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonMoveMoney = new System.Windows.Forms.Button();
             this.buttonTransactionStart = new System.Windows.Forms.Button();
             this.labelAccountTransactions = new System.Windows.Forms.Label();
             this.dataGridViewTransactions = new System.Windows.Forms.DataGridView();
+            this.buttonOpen = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -56,7 +58,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 556);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(852, 439);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -67,7 +69,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(895, 105);
+            this.panel1.Size = new System.Drawing.Size(846, 81);
             this.panel1.TabIndex = 0;
             // 
             // buttonMainMenu
@@ -90,18 +92,30 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonOpen);
+            this.panel2.Controls.Add(this.buttonMoveMoney);
             this.panel2.Controls.Add(this.buttonTransactionStart);
             this.panel2.Controls.Add(this.labelAccountTransactions);
             this.panel2.Controls.Add(this.dataGridViewTransactions);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 114);
+            this.panel2.Location = new System.Drawing.Point(3, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(895, 439);
+            this.panel2.Size = new System.Drawing.Size(846, 346);
             this.panel2.TabIndex = 1;
+            // 
+            // buttonMoveMoney
+            // 
+            this.buttonMoveMoney.Location = new System.Drawing.Point(506, 45);
+            this.buttonMoveMoney.Name = "buttonMoveMoney";
+            this.buttonMoveMoney.Size = new System.Drawing.Size(256, 34);
+            this.buttonMoveMoney.TabIndex = 3;
+            this.buttonMoveMoney.Text = "Move money to WingleSaver";
+            this.buttonMoveMoney.UseVisualStyleBackColor = true;
+            this.buttonMoveMoney.Click += new System.EventHandler(this.buttonMoveMoney_Click);
             // 
             // buttonTransactionStart
             // 
-            this.buttonTransactionStart.Location = new System.Drawing.Point(506, 17);
+            this.buttonTransactionStart.Location = new System.Drawing.Point(506, 2);
             this.buttonTransactionStart.Name = "buttonTransactionStart";
             this.buttonTransactionStart.Size = new System.Drawing.Size(256, 35);
             this.buttonTransactionStart.TabIndex = 2;
@@ -129,11 +143,20 @@
             this.dataGridViewTransactions.Size = new System.Drawing.Size(889, 345);
             this.dataGridViewTransactions.TabIndex = 0;
             // 
+            // buttonOpen
+            // 
+            this.buttonOpen.Location = new System.Drawing.Point(230, 45);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(256, 34);
+            this.buttonOpen.TabIndex = 4;
+            this.buttonOpen.Text = "Open WingleSaver";
+            this.buttonOpen.UseVisualStyleBackColor = true;
+            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 556);
+            this.ClientSize = new System.Drawing.Size(852, 439);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form7";
             this.Text = "Form7";
@@ -157,5 +180,7 @@
         private System.Windows.Forms.DataGridView dataGridViewTransactions;
         private System.Windows.Forms.Button buttonTransactionStart;
         private System.Windows.Forms.Label labelAccountTransactions;
+        private System.Windows.Forms.Button buttonMoveMoney;
+        private System.Windows.Forms.Button buttonOpen;
     }
 }

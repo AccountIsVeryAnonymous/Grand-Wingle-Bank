@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using Microsoft.Data.SqlClient;
 
 namespace Grand_Wingle_Bank
 {
@@ -36,7 +37,7 @@ namespace Grand_Wingle_Bank
         {
             SqlConnection connection = new SqlConnection(Database.connection);
             string accountsSql = "select * from [dbo].[account]";
-            connection.Open();      
+            connection.Open();
             SqlDataAdapter adaptor = new SqlDataAdapter(accountsSql, connection);
             DataTable bankAccounts = new DataTable();
             adaptor.Fill(bankAccounts);
@@ -91,6 +92,6 @@ namespace Grand_Wingle_Bank
     }
     class Database
     {
-        public static string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Bank.mdf;Integrated Security=True";
+        public static string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;" + @"AttachDbFilename=" + Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Bank.mdf")) + @";Integrated Security=True";
     }
 }

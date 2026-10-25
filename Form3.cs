@@ -19,7 +19,7 @@ namespace Grand_Wingle_Bank
         string question = "";
         string ID = "";
 
-        public Form3(int userID)
+        public Form3(long userID)
         {
             InitializeComponent();
             ID = Convert.ToString(userID);
@@ -29,7 +29,6 @@ namespace Grand_Wingle_Bank
                 if (user.UserID == userID)
                 {
                     int questionChoice = RNG.Next(1, 4);
-                    MessageBox.Show(Convert.ToString(questionChoice));
                     if (questionChoice == 1)
                     {
                         answer = Convert.ToString(user.Date);
@@ -74,9 +73,8 @@ namespace Grand_Wingle_Bank
             {
                 command.Parameters.AddWithValue("@LockedTime", DateTime.Now);
                 command.Parameters.AddWithValue("@UserID", ID);
-                int rowsAffected = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show(Convert.ToString(rowsAffected));
             }
         }
         private void buttonSignup_Click(object sender, EventArgs e)
