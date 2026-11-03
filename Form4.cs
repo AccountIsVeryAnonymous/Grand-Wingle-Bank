@@ -44,5 +44,9 @@ namespace Grand_Wingle_Bank
             form7.Show();
             this.Close();
         }
+        private void buttonViewWingleSaver_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

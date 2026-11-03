@@ -100,6 +100,7 @@
             this.buttonViewWingleSaver.TabIndex = 1;
             this.buttonViewWingleSaver.Text = "View";
             this.buttonViewWingleSaver.UseVisualStyleBackColor = true;
+            this.buttonViewWingleSaver.Click += new System.EventHandler(this.buttonViewWingleSaver_Click);
             // 
             // buttonViewWingleAccount
             // 

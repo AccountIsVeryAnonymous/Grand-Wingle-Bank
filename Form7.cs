@@ -14,9 +14,11 @@ namespace Grand_Wingle_Bank
     {
         private long Number = 0;
         private long ID = 0;
+        private bool SaverOpened = false;
         public Form7(long AccountNumber, long UserID)
         {
             InitializeComponent();
+            buttonMoveMoney.Hide();
             Number = AccountNumber;
             ID = UserID;
             dataGridViewTransactions.Columns.Add("Date", "Date of transaction");
@@ -25,6 +27,16 @@ namespace Grand_Wingle_Bank
             dataGridViewTransactions.Columns.Add("Receiving Account Number", "To");
             dataGridViewTransactions.Columns.Add("Balance before", "Before");
             dataGridViewTransactions.Columns.Add("Balance after", "After");
+            allSavers savers = new allSavers();
+            foreach (Saver saver in savers.Savers)
+            {
+                if (saver.UserID == ID)
+                {
+                    SaverOpened = true;
+                    buttonMoveMoney.Show();
+                    buttonOpen.Hide();
+                }
+            }
             int count = 0;
             foreach (Transaction t in new allTransactions().Transactions)
             {
@@ -64,6 +76,12 @@ namespace Grand_Wingle_Bank
         {
             Form9 form9 = new Form9(Number, ID);
             form9.Show();
+            this.Close();
+        }
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            Form12 form12 = new Form12(ID);
+            form12.Show();
             this.Close();
         }
     }

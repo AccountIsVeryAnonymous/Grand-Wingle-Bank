@@ -19,7 +19,6 @@ namespace Grand_Wingle_Bank
         private DateTime ImportantDate;
         private string ImportantName;
         private string ImportantPlace;
-        private allUsers _users;
         public Form5(string Forename, string Surname, DateTime DateOfBirth)
         {
             InitializeComponent();

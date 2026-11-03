@@ -90,7 +90,9 @@ namespace Grand_Wingle_Bank
         }
         private void buttonContinue_Click(object sender, EventArgs e)
         {
-
+            Form10 form10 = new Form10(AccountNumber, ID);
+            form10.Show();
+            this.Close();
         }
     }
 }

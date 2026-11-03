@@ -33,11 +33,11 @@
             this.buttonMainMenu = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonOpen = new System.Windows.Forms.Button();
             this.buttonMoveMoney = new System.Windows.Forms.Button();
             this.buttonTransactionStart = new System.Windows.Forms.Button();
             this.labelAccountTransactions = new System.Windows.Forms.Label();
             this.dataGridViewTransactions = new System.Windows.Forms.DataGridView();
-            this.buttonOpen = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -103,6 +103,16 @@
             this.panel2.Size = new System.Drawing.Size(846, 346);
             this.panel2.TabIndex = 1;
             // 
+            // buttonOpen
+            // 
+            this.buttonOpen.Location = new System.Drawing.Point(230, 45);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(256, 34);
+            this.buttonOpen.TabIndex = 4;
+            this.buttonOpen.Text = "Open WingleSaver";
+            this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
+            // 
             // buttonMoveMoney
             // 
             this.buttonMoveMoney.Location = new System.Drawing.Point(506, 45);
@@ -134,23 +144,18 @@
             // 
             // dataGridViewTransactions
             // 
-            this.dataGridViewTransactions.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewTransactions.AllowUserToAddRows = false;
+            this.dataGridViewTransactions.AllowUserToDeleteRows = false;
+            this.dataGridViewTransactions.AllowUserToResizeColumns = false;
+            this.dataGridViewTransactions.AllowUserToResizeRows = false;
             this.dataGridViewTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTransactions.Location = new System.Drawing.Point(3, 85);
             this.dataGridViewTransactions.Name = "dataGridViewTransactions";
+            this.dataGridViewTransactions.ReadOnly = true;
             this.dataGridViewTransactions.RowHeadersWidth = 62;
             this.dataGridViewTransactions.RowTemplate.Height = 28;
             this.dataGridViewTransactions.Size = new System.Drawing.Size(889, 345);
             this.dataGridViewTransactions.TabIndex = 0;
-            // 
-            // buttonOpen
-            // 
-            this.buttonOpen.Location = new System.Drawing.Point(230, 45);
-            this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(256, 34);
-            this.buttonOpen.TabIndex = 4;
-            this.buttonOpen.Text = "Open WingleSaver";
-            this.buttonOpen.UseVisualStyleBackColor = true;
             // 
             // Form7
             // 

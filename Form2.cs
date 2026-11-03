@@ -48,7 +48,6 @@ namespace Grand_Wingle_Bank
                 this.Close();
             }
         }
-
         private void buttonBack_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();

@@ -54,6 +54,7 @@ namespace Grand_Wingle_Bank
         {
 
             SqlConnection connection = new SqlConnection(Database.connection);
+            connection.Open();
             string insertSql = "insert into [dbo].[User] (UserID, DOB, Hash, Date, Place, Name, UserForename, UserSurname) values (@UserID, @DOB, @Hash, @Date, @Place, @Name, @UserForename, @UserSurname)";
             using (SqlCommand command = new SqlCommand(insertSql, connection))
             {
@@ -65,7 +66,6 @@ namespace Grand_Wingle_Bank
                 command.Parameters.AddWithValue("@Name", ImportantName);
                 command.Parameters.AddWithValue("@UserForename", UserForename);
                 command.Parameters.AddWithValue("@UserSurname", UserSurname);
-                connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -82,15 +82,11 @@ namespace Grand_Wingle_Bank
             string accountSql = "insert into [dbo].[Account] (UserID, TotalBalance, CurrentAccountBalance, SaverBalance, SaverNumber, AccountNumber, SortCode) values (@UserID, @TotalBalance, @CurrentAccountBalance, @SaverBalance, @SaverNumber, @AccountNumber, @SortCode)";
             using (SqlCommand command = new SqlCommand(accountSql, connection))
             {
-                decimal TotalBalance = 0;
-                decimal AccountBalance = 0;
-                decimal SaverBalance = 0;
-                long SaverNumber = 0;
                 command.Parameters.AddWithValue("@UserID", Convert.ToInt64(UserID));
                 command.Parameters.AddWithValue("@TotalBalance", 0);
                 command.Parameters.AddWithValue("@CurrentAccountBalance", 0);
                 command.Parameters.AddWithValue("@SaverBalance", 0);
-                command.Parameters.AddWithValue("@SaverNumber", 0);
+                command.Parameters.AddWithValue("@SaverNumber", null);
                 command.Parameters.AddWithValue("@AccountNumber", Convert.ToInt64(AccountNumber));
                 command.Parameters.AddWithValue("@SortCode", int.Parse(SortCode));
                 connection.Open();

@@ -15,6 +15,7 @@ namespace Grand_Wingle_Bank
         public decimal? SaverBalance { get; set; }
         public long? SaverNumber { get; set; }
         public long AccountNumber { get; set; }
+        public int SortCode { get; set; }
         public Account(DataRow row)
         {
             UserID = Convert.ToInt64(row["UserID"].ToString());
@@ -23,6 +24,7 @@ namespace Grand_Wingle_Bank
             SaverBalance = decimal.Parse(row["SaverBalance"].ToString());
             SaverNumber = Convert.ToInt64(row["SaverNumber"].ToString()); 
             AccountNumber = Convert.ToInt64(row["AccountNumber"].ToString());
+            SortCode = Convert.ToInt32(row["SortCode"].ToString());
         }
     }
 }
