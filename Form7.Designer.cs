@@ -38,6 +38,7 @@
             this.buttonTransactionStart = new System.Windows.Forms.Button();
             this.labelAccountTransactions = new System.Windows.Forms.Label();
             this.dataGridViewTransactions = new System.Windows.Forms.DataGridView();
+            this.buttonDeposit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -49,16 +50,17 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(852, 439);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.70652F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.29348F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(591, 368);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -67,16 +69,18 @@
             this.panel1.Controls.Add(this.buttonMainMenu);
             this.panel1.Controls.Add(this.pictureBoxLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 81);
+            this.panel1.Size = new System.Drawing.Size(587, 108);
             this.panel1.TabIndex = 0;
             // 
             // buttonMainMenu
             // 
-            this.buttonMainMenu.Location = new System.Drawing.Point(694, 42);
+            this.buttonMainMenu.Location = new System.Drawing.Point(463, 27);
+            this.buttonMainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMainMenu.Name = "buttonMainMenu";
-            this.buttonMainMenu.Size = new System.Drawing.Size(115, 37);
+            this.buttonMainMenu.Size = new System.Drawing.Size(77, 24);
             this.buttonMainMenu.TabIndex = 1;
             this.buttonMainMenu.Text = "Main menu";
             this.buttonMainMenu.UseVisualStyleBackColor = true;
@@ -84,30 +88,37 @@
             // 
             // pictureBoxLogo
             // 
-            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxLogo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBoxLogo.BackgroundImage = global::Grand_Wingle_Bank.Properties.Resources.GrandWingleBankLogo;
+            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(2, 0);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(431, 102);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(304, 107);
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonDeposit);
             this.panel2.Controls.Add(this.buttonOpen);
             this.panel2.Controls.Add(this.buttonMoveMoney);
             this.panel2.Controls.Add(this.buttonTransactionStart);
             this.panel2.Controls.Add(this.labelAccountTransactions);
             this.panel2.Controls.Add(this.dataGridViewTransactions);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 90);
+            this.panel2.Location = new System.Drawing.Point(2, 114);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(846, 346);
+            this.panel2.Size = new System.Drawing.Size(587, 252);
             this.panel2.TabIndex = 1;
             // 
             // buttonOpen
             // 
-            this.buttonOpen.Location = new System.Drawing.Point(230, 45);
+            this.buttonOpen.Location = new System.Drawing.Point(153, 29);
+            this.buttonOpen.Margin = new System.Windows.Forms.Padding(2);
             this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(256, 34);
+            this.buttonOpen.Size = new System.Drawing.Size(171, 22);
             this.buttonOpen.TabIndex = 4;
             this.buttonOpen.Text = "Open WingleSaver";
             this.buttonOpen.UseVisualStyleBackColor = true;
@@ -115,9 +126,10 @@
             // 
             // buttonMoveMoney
             // 
-            this.buttonMoveMoney.Location = new System.Drawing.Point(506, 45);
+            this.buttonMoveMoney.Location = new System.Drawing.Point(337, 29);
+            this.buttonMoveMoney.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMoveMoney.Name = "buttonMoveMoney";
-            this.buttonMoveMoney.Size = new System.Drawing.Size(256, 34);
+            this.buttonMoveMoney.Size = new System.Drawing.Size(171, 22);
             this.buttonMoveMoney.TabIndex = 3;
             this.buttonMoveMoney.Text = "Move money to WingleSaver";
             this.buttonMoveMoney.UseVisualStyleBackColor = true;
@@ -125,9 +137,10 @@
             // 
             // buttonTransactionStart
             // 
-            this.buttonTransactionStart.Location = new System.Drawing.Point(506, 2);
+            this.buttonTransactionStart.Location = new System.Drawing.Point(337, 1);
+            this.buttonTransactionStart.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTransactionStart.Name = "buttonTransactionStart";
-            this.buttonTransactionStart.Size = new System.Drawing.Size(256, 35);
+            this.buttonTransactionStart.Size = new System.Drawing.Size(171, 23);
             this.buttonTransactionStart.TabIndex = 2;
             this.buttonTransactionStart.Text = "Make a transaction";
             this.buttonTransactionStart.UseVisualStyleBackColor = true;
@@ -136,9 +149,10 @@
             // labelAccountTransactions
             // 
             this.labelAccountTransactions.AutoSize = true;
-            this.labelAccountTransactions.Location = new System.Drawing.Point(4, 17);
+            this.labelAccountTransactions.Location = new System.Drawing.Point(3, 11);
+            this.labelAccountTransactions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAccountTransactions.Name = "labelAccountTransactions";
-            this.labelAccountTransactions.Size = new System.Drawing.Size(207, 20);
+            this.labelAccountTransactions.Size = new System.Drawing.Size(140, 13);
             this.labelAccountTransactions.TabIndex = 1;
             this.labelAccountTransactions.Text = "WingleAccount transactions";
             // 
@@ -149,20 +163,31 @@
             this.dataGridViewTransactions.AllowUserToResizeColumns = false;
             this.dataGridViewTransactions.AllowUserToResizeRows = false;
             this.dataGridViewTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTransactions.Location = new System.Drawing.Point(3, 85);
+            this.dataGridViewTransactions.Location = new System.Drawing.Point(2, 55);
+            this.dataGridViewTransactions.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewTransactions.Name = "dataGridViewTransactions";
             this.dataGridViewTransactions.ReadOnly = true;
             this.dataGridViewTransactions.RowHeadersWidth = 62;
             this.dataGridViewTransactions.RowTemplate.Height = 28;
-            this.dataGridViewTransactions.Size = new System.Drawing.Size(889, 345);
+            this.dataGridViewTransactions.Size = new System.Drawing.Size(593, 224);
             this.dataGridViewTransactions.TabIndex = 0;
+            // 
+            // buttonDeposit
+            // 
+            this.buttonDeposit.Location = new System.Drawing.Point(153, 1);
+            this.buttonDeposit.Name = "buttonDeposit";
+            this.buttonDeposit.Size = new System.Drawing.Size(171, 23);
+            this.buttonDeposit.TabIndex = 5;
+            this.buttonDeposit.Text = "Deposit money";
+            this.buttonDeposit.UseVisualStyleBackColor = true;
             // 
             // Form7
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 439);
+            this.ClientSize = new System.Drawing.Size(591, 368);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form7";
             this.Text = "Form7";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -187,5 +212,6 @@
         private System.Windows.Forms.Label labelAccountTransactions;
         private System.Windows.Forms.Button buttonMoveMoney;
         private System.Windows.Forms.Button buttonOpen;
+        private System.Windows.Forms.Button buttonDeposit;
     }
 }

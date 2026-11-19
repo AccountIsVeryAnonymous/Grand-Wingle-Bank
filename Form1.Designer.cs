@@ -30,10 +30,12 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.labelSignup = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.buttonSignup = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPasscode = new System.Windows.Forms.TextBox();
             this.textBoxUserID = new System.Windows.Forms.TextBox();
             this.labelPasscode = new System.Windows.Forms.Label();
@@ -41,8 +43,10 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -58,49 +62,61 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.42466F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.57534F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 365);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pictureBoxLogo);
-            this.panel1.Controls.Add(this.labelSignup);
-            this.panel1.Controls.Add(this.buttonSignup);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(596, 67);
+            this.panel1.Size = new System.Drawing.Size(596, 116);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBoxLogo
+            // panel3
             // 
-            this.pictureBoxLogo.InitialImage = null;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(6, 0);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(295, 66);
-            this.pictureBoxLogo.TabIndex = 2;
-            this.pictureBoxLogo.TabStop = false;
+            this.panel3.Controls.Add(this.labelSignup);
+            this.panel3.Controls.Add(this.buttonSignup);
+            this.panel3.Location = new System.Drawing.Point(372, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 100);
+            this.panel3.TabIndex = 3;
             // 
             // labelSignup
             // 
             this.labelSignup.AutoSize = true;
             this.labelSignup.BackColor = System.Drawing.SystemColors.Control;
-            this.labelSignup.Location = new System.Drawing.Point(487, 19);
+            this.labelSignup.Location = new System.Drawing.Point(69, 22);
             this.labelSignup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSignup.Name = "labelSignup";
             this.labelSignup.Size = new System.Drawing.Size(86, 13);
             this.labelSignup.TabIndex = 1;
             this.labelSignup.Text = "No account yet?";
             // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBoxLogo.BackgroundImage = global::Grand_Wingle_Bank.Properties.Resources.GrandWingleBankLogo;
+            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxLogo.InitialImage = null;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(2, 0);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(320, 113);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 2;
+            this.pictureBoxLogo.TabStop = false;
+            // 
             // buttonSignup
             // 
             this.buttonSignup.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonSignup.Location = new System.Drawing.Point(490, 34);
+            this.buttonSignup.Location = new System.Drawing.Point(72, 52);
             this.buttonSignup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonSignup.Name = "buttonSignup";
             this.buttonSignup.Size = new System.Drawing.Size(75, 24);
@@ -111,17 +127,26 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.textBoxPasscode);
             this.panel2.Controls.Add(this.textBoxUserID);
             this.panel2.Controls.Add(this.labelPasscode);
             this.panel2.Controls.Add(this.labelUserID);
             this.panel2.Controls.Add(this.buttonLogin);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(2, 76);
+            this.panel2.Location = new System.Drawing.Point(2, 125);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(596, 286);
+            this.panel2.Size = new System.Drawing.Size(596, 237);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(381, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // textBoxPasscode
             // 
@@ -161,7 +186,7 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(430, 107);
+            this.buttonLogin.Location = new System.Drawing.Point(443, 180);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(56, 35);
@@ -182,10 +207,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,6 +230,8 @@
         private System.Windows.Forms.Label labelPasscode;
         private System.Windows.Forms.Label labelUserID;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

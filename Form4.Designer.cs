@@ -47,17 +47,17 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 562);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.13699F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.86301F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(589, 365);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -68,35 +68,38 @@
             this.panel1.Controls.Add(this.buttonViewWingleSaver);
             this.panel1.Controls.Add(this.buttonViewWingleAccount);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 116);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(2, 113);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(894, 442);
+            this.panel1.Size = new System.Drawing.Size(585, 249);
             this.panel1.TabIndex = 0;
             // 
             // textBoxWingleSaver
             // 
-            this.textBoxWingleSaver.Location = new System.Drawing.Point(64, 198);
+            this.textBoxWingleSaver.Location = new System.Drawing.Point(43, 129);
+            this.textBoxWingleSaver.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxWingleSaver.Multiline = true;
             this.textBoxWingleSaver.Name = "textBoxWingleSaver";
-            this.textBoxWingleSaver.Size = new System.Drawing.Size(482, 68);
+            this.textBoxWingleSaver.Size = new System.Drawing.Size(323, 46);
             this.textBoxWingleSaver.TabIndex = 5;
             this.textBoxWingleSaver.Text = "WingleSaver";
             // 
             // textBoxWingleAccount
             // 
-            this.textBoxWingleAccount.Location = new System.Drawing.Point(64, 57);
+            this.textBoxWingleAccount.Location = new System.Drawing.Point(43, 37);
+            this.textBoxWingleAccount.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxWingleAccount.Multiline = true;
             this.textBoxWingleAccount.Name = "textBoxWingleAccount";
-            this.textBoxWingleAccount.Size = new System.Drawing.Size(482, 68);
+            this.textBoxWingleAccount.Size = new System.Drawing.Size(323, 46);
             this.textBoxWingleAccount.TabIndex = 4;
             this.textBoxWingleAccount.Text = "WingleAccount";
             // 
             // buttonViewWingleSaver
             // 
-            this.buttonViewWingleSaver.Location = new System.Drawing.Point(604, 198);
+            this.buttonViewWingleSaver.Location = new System.Drawing.Point(403, 129);
+            this.buttonViewWingleSaver.Margin = new System.Windows.Forms.Padding(2);
             this.buttonViewWingleSaver.Name = "buttonViewWingleSaver";
-            this.buttonViewWingleSaver.Size = new System.Drawing.Size(122, 37);
+            this.buttonViewWingleSaver.Size = new System.Drawing.Size(81, 24);
             this.buttonViewWingleSaver.TabIndex = 1;
             this.buttonViewWingleSaver.Text = "View";
             this.buttonViewWingleSaver.UseVisualStyleBackColor = true;
@@ -104,9 +107,10 @@
             // 
             // buttonViewWingleAccount
             // 
-            this.buttonViewWingleAccount.Location = new System.Drawing.Point(604, 52);
+            this.buttonViewWingleAccount.Location = new System.Drawing.Point(403, 34);
+            this.buttonViewWingleAccount.Margin = new System.Windows.Forms.Padding(2);
             this.buttonViewWingleAccount.Name = "buttonViewWingleAccount";
-            this.buttonViewWingleAccount.Size = new System.Drawing.Size(122, 37);
+            this.buttonViewWingleAccount.Size = new System.Drawing.Size(81, 24);
             this.buttonViewWingleAccount.TabIndex = 0;
             this.buttonViewWingleAccount.Text = "View";
             this.buttonViewWingleAccount.UseVisualStyleBackColor = true;
@@ -118,26 +122,30 @@
             this.panel2.Controls.Add(this.pictureBoxLogo);
             this.panel2.Controls.Add(this.buttonLogOut);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(2, 3);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(894, 104);
+            this.panel2.Size = new System.Drawing.Size(585, 104);
             this.panel2.TabIndex = 1;
             // 
             // pictureBoxLogo
             // 
-            this.pictureBoxLogo.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxLogo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBoxLogo.BackgroundImage = global::Grand_Wingle_Bank.Properties.Resources.GrandWingleBankLogo;
+            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(436, 97);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(306, 99);
             this.pictureBoxLogo.TabIndex = 1;
             this.pictureBoxLogo.TabStop = false;
             // 
             // buttonLogOut
             // 
-            this.buttonLogOut.Location = new System.Drawing.Point(770, 35);
-            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonLogOut.Location = new System.Drawing.Point(488, 51);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(84, 34);
+            this.buttonLogOut.Size = new System.Drawing.Size(56, 22);
             this.buttonLogOut.TabIndex = 0;
             this.buttonLogOut.Text = "Log out";
             this.buttonLogOut.UseVisualStyleBackColor = true;
@@ -145,11 +153,11 @@
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(589, 365);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Form4";
             this.Text = "Form4";
             this.tableLayoutPanel1.ResumeLayout(false);

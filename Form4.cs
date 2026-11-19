@@ -16,6 +16,7 @@ namespace Grand_Wingle_Bank
         private long AccountNumber = 0;
         private double AccountBalance = 0;
         private double SaverBalance = 0;
+        private long SaverNumber = 0;
 
         public Form4(long UserID)
         {
@@ -28,6 +29,7 @@ namespace Grand_Wingle_Bank
                     AccountNumber = a.AccountNumber;
                     AccountBalance = double.Parse(Convert.ToString(a.CurrentAccountBalance));
                     SaverBalance = double.Parse(Convert.ToString(a.SaverBalance));
+                    SaverNumber = long.Parse(Convert.ToString(a.SaverNumber));
                     break;
                 }
             }
@@ -46,7 +48,9 @@ namespace Grand_Wingle_Bank
         }
         private void buttonViewWingleSaver_Click(object sender, EventArgs e)
         {
-
+            Form13 form13 = new Form13(ID, SaverNumber);
+            form13.Show();
+            this.Close();
         }
     }
 }

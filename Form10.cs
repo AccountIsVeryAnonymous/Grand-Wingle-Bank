@@ -55,5 +55,10 @@ namespace Grand_Wingle_Bank
             form4.Show();
             this.Close();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
