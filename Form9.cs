@@ -15,12 +15,22 @@ namespace Grand_Wingle_Bank
     {
         private long Number = 0;
         private long ID = 0;
-        public Form9(long AccountNumber, long UserID)
+        private string accountType = "";
+        public Form9(long AccountNumber, long UserID, string accountType)
         {
             InitializeComponent();
             this.Number = AccountNumber;
             this.ID = UserID;
             buttonContinue.Hide();
+            this.accountType = accountType;
+            if (accountType == "saver")
+            {
+                buttonSelect.Text = "WingleSaver";
+            }
+            else if (accountType == "current account")
+            {
+                buttonSelect.Text = "WingleAccount";
+            } 
         }
         private void buttonMainMenu_Click(object sender, EventArgs e)
         {
@@ -28,8 +38,7 @@ namespace Grand_Wingle_Bank
             form4.Show();
             this.Close();
         }
-
-        private void textBoxAmount_TextChanged(object sender, EventArgs e)
+        private void buttonSelect_Click(object sender, EventArgs e)
         {
             textBoxSuccess.Text = "Success! Your money has been transferred ";
             buttonContinue.Show();
@@ -53,39 +62,79 @@ namespace Grand_Wingle_Bank
             }
             SqlConnection connection = new SqlConnection(Database.connection);
             connection.Open();
-            decimal accountBalanceAfter = accountBalance - amount;
-            decimal saverBalanceAfter = saverBalance + amount;
-            string AccountSql = "update [dbo].[Account] set CurrentAccountBalance = @AccountBalance SaverBalance = @SaverBalance where AccountNumber = @Number";
-            using (SqlCommand command = new SqlCommand(AccountSql, connection))
+            if (accountType == "current account")
             {
-                command.Parameters.AddWithValue("@AccountBalance", accountBalanceAfter);
-                command.Parameters.AddWithValue("@SaverBalance", saverBalanceAfter);
-                command.Parameters.AddWithValue("@Number", Number);
-                command.ExecuteNonQuery();
-                connection.Close();
+                decimal accountBalanceAfter = accountBalance - amount;
+                decimal saverBalanceAfter = saverBalance + amount;
+                string AccountSql = "update [dbo].[Account] set CurrentAccountBalance = @AccountBalance SaverBalance = @SaverBalance where AccountNumber = @Number";
+                using (SqlCommand command = new SqlCommand(AccountSql, connection))
+                {
+                    command.Parameters.AddWithValue("@AccountBalance", accountBalanceAfter);
+                    command.Parameters.AddWithValue("@SaverBalance", saverBalanceAfter);
+                    command.Parameters.AddWithValue("@Number", Number);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                string SaverSql = "update [dbo].[Saver] set TotalBalance = @SaverBalance where UserID = @UserID";
+                using (SqlCommand command = new SqlCommand(SaverSql, connection))
+                {
+                    command.Parameters.AddWithValue("@SaverBalance", saverBalance);
+                    command.Parameters.AddWithValue("@UserID", userID);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                string TransactionSql = "insert into [dbo].[Transaction] (AccountNumber, ReceivingNumber, Amount, DateOfTransaction, BalanceBefore, BalanceAfter, ReceivingBalanceBefore, ReceivingBalanceAfter) values (@Number, @ReceivingNumber, @Amount, @Date, @BalanceBefore, @BalanceAfter, @ReceivingBalanceBefore, @ReceivingBalanceAfter)";
+                using (SqlCommand command = new SqlCommand(TransactionSql, connection))
+                {
+                    command.Parameters.AddWithValue("@Number", Number);
+                    command.Parameters.AddWithValue("@ReceivingNumber", saverBalance);
+                    command.Parameters.AddWithValue("@Amount", amount);
+                    command.Parameters.AddWithValue("@Date", DateTime.Now);
+                    command.Parameters.AddWithValue("@BalanceBefore", accountBalance);
+                    command.Parameters.AddWithValue("@BalanceAfter", accountBalanceAfter);
+                    command.Parameters.AddWithValue("@ReceivingBalanceBefore", saverBalance);
+                    command.Parameters.AddWithValue("@ReceivingBalanceAfter", saverBalanceAfter);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
             }
-            string SaverSql = "update [dbo].[Saver] set TotalBalance = @SaverBalance where UserID = @UserID";
-            using (SqlCommand command = new SqlCommand(SaverSql, connection))
+            else if (accountType == "saver")
             {
-                command.Parameters.AddWithValue("@SaverBalance", saverBalance);
-                command.Parameters.AddWithValue("@UserID", userID);
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            string TransactionSql = "insert into [dbo].[Transaction] (AccountNumber, ReceivingNumber, Amount, DateOfTransaction, BalanceBefore, BalanceAfter, ReceivingBalanceBefore, ReceivingBalanceAfter) values (@Number, @ReceivingNumber, @Amount, @Date, @BalanceBefore, @BalanceAfter, @ReceivingBalanceBefore, @ReceivingBalanceAfter)";
-            using (SqlCommand command = new SqlCommand(TransactionSql, connection))
-            {
-                command.Parameters.AddWithValue("@Number", Number);
-                command.Parameters.AddWithValue("@ReceivingNumber", saverBalance);
-                command.Parameters.AddWithValue("@Amount", amount);
-                command.Parameters.AddWithValue("@Date", DateTime.Now);
-                command.Parameters.AddWithValue("@BalanceBefore", accountBalance);
-                command.Parameters.AddWithValue("@BalanceAfter", accountBalanceAfter);
-                command.Parameters.AddWithValue("@ReceivingBalanceBefore", saverBalance);
-                command.Parameters.AddWithValue("@ReceivingBalanceAfter", saverBalanceAfter);
-                command.ExecuteNonQuery();
-                connection.Close();
+                decimal accountBalanceAfter = accountBalance + amount;
+                decimal saverBalanceAfter = saverBalance - amount;
+                string AccountSql = "update [dbo].[Account] set CurrentAccountBalance = @AccountBalance SaverBalance = @SaverBalance where SaverNumber = @Number";
+                using (SqlCommand command = new SqlCommand(AccountSql, connection))
+                {
+                    command.Parameters.AddWithValue("@AccountBalance", accountBalanceAfter);
+                    command.Parameters.AddWithValue("@SaverBalance", saverBalanceAfter);
+                    command.Parameters.AddWithValue("@Number", Number);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                string SaverSql = "update [dbo].[Saver] set TotalBalance = @SaverBalance where UserID = @UserID";
+                using (SqlCommand command = new SqlCommand(SaverSql, connection))
+                {
+                    command.Parameters.AddWithValue("@SaverBalance", saverBalance);
+                    command.Parameters.AddWithValue("@UserID", userID);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                string TransactionSql = "insert into [dbo].[Transaction] (AccountNumber, ReceivingNumber, Amount, DateOfTransaction, BalanceBefore, BalanceAfter, ReceivingBalanceBefore, ReceivingBalanceAfter) values (@Number, @ReceivingNumber, @Amount, @Date, @BalanceBefore, @BalanceAfter, @ReceivingBalanceBefore, @ReceivingBalanceAfter)";
+                using (SqlCommand command = new SqlCommand(TransactionSql, connection))
+                {
+                    command.Parameters.AddWithValue("@Number", Number);
+                    command.Parameters.AddWithValue("@ReceivingNumber", saverBalance);
+                    command.Parameters.AddWithValue("@Amount", amount);
+                    command.Parameters.AddWithValue("@Date", DateTime.Now);
+                    command.Parameters.AddWithValue("@BalanceBefore", accountBalance);
+                    command.Parameters.AddWithValue("@BalanceAfter", accountBalanceAfter);
+                    command.Parameters.AddWithValue("@ReceivingBalanceBefore", saverBalance);
+                    command.Parameters.AddWithValue("@ReceivingBalanceAfter", saverBalanceAfter);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
             }
             Form4 form4 = new Form4(userID);
             form4.Show();

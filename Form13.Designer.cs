@@ -33,8 +33,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonMainMenu = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridViewTransactions = new System.Windows.Forms.DataGridView();
             this.buttonMoveMoney = new System.Windows.Forms.Button();
+            this.dataGridViewTransactions = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,6 +104,16 @@
             this.panel2.Size = new System.Drawing.Size(586, 253);
             this.panel2.TabIndex = 1;
             // 
+            // buttonMoveMoney
+            // 
+            this.buttonMoveMoney.Location = new System.Drawing.Point(321, 25);
+            this.buttonMoveMoney.Name = "buttonMoveMoney";
+            this.buttonMoveMoney.Size = new System.Drawing.Size(180, 23);
+            this.buttonMoveMoney.TabIndex = 1;
+            this.buttonMoveMoney.Text = "Move money to WingleAccount";
+            this.buttonMoveMoney.UseVisualStyleBackColor = true;
+            this.buttonMoveMoney.Click += new System.EventHandler(this.buttonMoveMoney_Click);
+            // 
             // dataGridViewTransactions
             // 
             this.dataGridViewTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -114,15 +124,6 @@
             this.dataGridViewTransactions.RowTemplate.Height = 28;
             this.dataGridViewTransactions.Size = new System.Drawing.Size(582, 198);
             this.dataGridViewTransactions.TabIndex = 0;
-            // 
-            // buttonMoveMoney
-            // 
-            this.buttonMoveMoney.Location = new System.Drawing.Point(321, 25);
-            this.buttonMoveMoney.Name = "buttonMoveMoney";
-            this.buttonMoveMoney.Size = new System.Drawing.Size(180, 23);
-            this.buttonMoveMoney.TabIndex = 1;
-            this.buttonMoveMoney.Text = "Move money to WingleAccount";
-            this.buttonMoveMoney.UseVisualStyleBackColor = true;
             // 
             // Form13
             // 

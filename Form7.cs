@@ -74,7 +74,7 @@ namespace Grand_Wingle_Bank
 
         private void buttonMoveMoney_Click(object sender, EventArgs e)
         {
-            Form9 form9 = new Form9(Number, ID);
+            Form9 form9 = new Form9(Number, ID, "current account");
             form9.Show();
             this.Close();
         }

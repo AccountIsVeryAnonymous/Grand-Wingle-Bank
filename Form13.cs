@@ -53,5 +53,11 @@ namespace Grand_Wingle_Bank
             form4.Show();
             this.Close();
         }
+        private void buttonMoveMoney_Click(object sender, EventArgs e)
+        {
+            Form9 form9 = new Form9(Number, UserID, "saver");
+            form9.Show();
+            this.Close();
+        }
     }
 }
